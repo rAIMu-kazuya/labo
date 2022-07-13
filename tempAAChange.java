@@ -3,12 +3,11 @@ import java.io.*;
 
 public class tempAAChange{
   public static void main(String[] args) {
-    List<String> listCsv = new ArrayList<String>();
-    List<String> listBefore = new ArrayList<String>();
-    List<String> listAfter = new ArrayList<String>();
-    
+    List<String> listCsv = new ArrayList<>();
+    List<String> listBefore = new ArrayList<>();
+
     BufferedReader brCsv = null;
-    BufferedReader brBef = null;
+    BufferedReader brBef;
 
     try {
       /* csvファイル読込 */
@@ -40,26 +39,24 @@ public class tempAAChange{
       key = listCsv.get(0).split(",");
 
       /* listBeforeをlistAfterにコピー */
-      for (int i = 0 ; i < listBefore.size(); i++) {
-        listAfter.add(listBefore.get(i));
-      }
+      List<String> listAfter = new ArrayList<>(listBefore);
 
       /* value1行目から最終行まで繰り返し */
       for (int j = 1 ; j < listCsv.size(); j++) {
-        String[] value;            
+        String[] value;
         value = listCsv.get(j).split(",");   //value[]にcsvファイルのi行目を分割しながら格納
 
         /* テンプレファイルの1行目から最終行目まで繰り返し */
         for (int k = 0 ; k < listBefore.size(); k++) {
-          listAfter.set(k,listBefore.get(k));  
+          listAfter.set(k,listBefore.get(k));
           String strBefore = listAfter.get(k);//setを使うことで、listAfterに入っているひとつ前の作問をリセット
                                               //addにすると1問目はできるけど2問目以降前回の問題が継続されてしまう
 
           /* key配列の数文繰り返す */
           for(int l = 0 ; l < key.length; l++){
-            if (-1 < strBefore.indexOf(key[l])) {                   //もしkey[l]があったら
-              listAfter.set(k,strBefore.replace(key[l], value[l])); //key[l]とvalue[l]を入れ替えてもう一度set 
-            } 
+            if (strBefore.contains(key[l])) {                   //もしkey[l]があったら
+              listAfter.set(k,strBefore.replace(key[l], value[l])); //key[l]とvalue[l]を入れ替えてもう一度set
+            }
           }
         }
         /* この時点でlistAfterに文字列置換後の新しい問題が完成 */
@@ -75,10 +72,9 @@ public class tempAAChange{
         /* 新規ファイルに書き込む準備 */
         FileWriter fw = new FileWriter("./" + key[0] + "/" + value[0] + ".java");
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
-            
+
         /* listAfterを新規ファイルに書き込み！ */
-        for (int m = 0 ; m < listAfter.size(); m++) {
-          String changedLine = listAfter.get(m);
+        for (String changedLine : listAfter) {
           pw.println(changedLine);
         }
         pw.close();
