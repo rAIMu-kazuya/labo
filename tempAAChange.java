@@ -38,8 +38,23 @@ public class tempAAChange{
       String[] key;
       key = listCsv.get(0).split(",");
 
+      /* 新規フォルダ "key[0]" を作成 */
+      File newfolder = new File("./" + key[0]);
+      if (newfolder.mkdir()){
+          System.out.println("make directory: ./" + key[0]);
+      }
+
+      for (int i = 1; i < listCsv.size(); i++) {
+        File newFile = new File("./" + key[0] + "/" + listCsv.get(i).split(",")[0] + ".java");
+        if (newFile.createNewFile()){
+            System.out.println("make file: ./" + key[0] + "/" + listCsv.get(i).split(",")[0] + ".java");
+        }
+      }
+
       /* listBeforeをlistAfterにコピー */
       List<String> listAfter = new ArrayList<>(listBefore);
+
+      List<List<String>> values = new ArrayList<>();
 
       /* value1行目から最終行まで繰り返し */
       for (int j = 1 ; j < listCsv.size(); j++) {
@@ -61,13 +76,9 @@ public class tempAAChange{
         }
         /* この時点でlistAfterに文字列置換後の新しい問題が完成 */
 
-        /* 新規フォルダ "key[0]" を作成 */
-        File newfolder = new File("./" + key[0] );
-        newfolder.mkdir();
-
         /* 新規フォルダー ”key[0]” に新しいファイル "value[0].java" を作成 */
-        File newFile = new File("./" + key[0] + "/" + value[0] + ".java");
-        newFile.createNewFile();
+//        File newFile = new File("./" + key[0] + "/" + value[0] + ".java");
+//        newFile.createNewFile();
 
         /* 新規ファイルに書き込む準備 */
         FileWriter fw = new FileWriter("./" + key[0] + "/" + value[0] + ".java");
