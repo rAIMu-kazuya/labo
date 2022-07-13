@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.*;
+import java.nio.file.*;
 
 public class tempAAChange{
   public static void main(String[] args) {
@@ -64,12 +65,16 @@ public class tempAAChange{
         }
         /* この時点でlistAfterに文字列置換後の新しい問題が完成 */
 
-        /* quizフォルダーに新しいファイルを作成 */
-        File newFile = new File("./quiz/" + value[0] + ".java");
+        /* 新規フォルダ "key[0]" を作成 */
+        File newfolder = new File("./" + key[0] );
+        newfolder.mkdir();
+
+        /* 新規フォルダー ”key[0]” に新しいファイル "value[0].java" を作成 */
+        File newFile = new File("./" + key[0] + "/" + value[0] + ".java");
         newFile.createNewFile();
 
         /* 新規ファイルに書き込む準備 */
-        FileWriter fw = new FileWriter("./quiz/" + value[0] + ".java");
+        FileWriter fw = new FileWriter("./" + key[0] + "/" + value[0] + ".java");
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
             
         /* listAfterを新規ファイルに書き込み！ */
