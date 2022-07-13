@@ -17,9 +17,9 @@ public class tempAAChange{
       InputStreamReader stream = new InputStreamReader(input);
       brCsv = new BufferedReader(stream);
 
-      /* csvファイルをlist csvに格納 */
+      /* csvファイルをlistCsvに格納 */
       String line;
-      while((line = brCsv.readLine()) != null){
+      while((line = brCsv.readLine()) != null){  //”1行読み込んで格納”を繰り返す
         listCsv.add(line);
       }
 
@@ -35,43 +35,49 @@ public class tempAAChange{
         listBefore.add(lineBef);
       }
 
-      /* csvファイルの１行目を配列srt1[]に分割しながら格納 */
+      /* csvファイルの１行目を配列key[]に分割しながら格納 */
       String[] key;
       key = listCsv.get(0).split(",");
 
       /* listBeforeをlistAfterにコピー */
-      for (int j = 0 ; j < listBefore.size(); j++) {
-        listAfter.add(listBefore.get(j));
+      for (int i = 0 ; i < listBefore.size(); i++) {
+        listAfter.add(listBefore.get(i));
       }
 
-
-      for (int i = 1 ; i < listCsv.size(); i++) {
+      /* value1行目から最終行まで繰り返し */
+      for (int j = 1 ; j < listCsv.size(); j++) {
         String[] value;            
-        value = listCsv.get(i).split(",");   //value[]にcsvファイルのi行目を分割しながら格納
+        value = listCsv.get(j).split(",");   //value[]にcsvファイルのi行目を分割しながら格納
 
+        /* テンプレファイルの1行目から最終行目まで繰り返し */
         for (int k = 0 ; k < listBefore.size(); k++) {
-          listAfter.set(k,listBefore.get(k));  //
-          String strBefore = listAfter.get(k);
+          listAfter.set(k,listBefore.get(k));  
+          String strBefore = listAfter.get(k);//setを使うことで、listAfterに入っているひとつ前の作問をリセット
+                                              //addにすると1問目はできるけど2問目以降前回の問題が継続されてしまう
 
+          /* key配列の数文繰り返す */
           for(int l = 0 ; l < key.length; l++){
-            if (-1 < strBefore.indexOf(key[l])) {           
-              listAfter.set(k,strBefore.replace(key[l], value[l]));   
+            if (-1 < strBefore.indexOf(key[l])) {                   //もしkey[l]があったら
+              listAfter.set(k,strBefore.replace(key[l], value[l])); //key[l]とvalue[l]を入れ替えてもう一度set 
             } 
           }
         }
-        for (int j = 0 ; j < listAfter.size(); j++) {
-          File newFile = new File("./quiz/" + value[0] + ".java");
-          newFile.createNewFile();
+        /* この時点でlistAfterに文字列置換後の新しい問題が完成 */
 
-          FileWriter fw = new FileWriter("./quiz/" + value[0] + ".java");
-          PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
+        /* quizフォルダーに新しいファイルを作成 */
+        File newFile = new File("./quiz/" + value[0] + ".java");
+        newFile.createNewFile();
+
+        /* 新規ファイルに書き込む準備 */
+        FileWriter fw = new FileWriter("./quiz/" + value[0] + ".java");
+        PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
             
-          for (int m = 0 ; m < listAfter.size(); m++) {
-            String changedLine = listAfter.get(m);
-            pw.println(changedLine);
-          }
-          pw.close();
+        /* listAfterを新規ファイルに書き込み！ */
+        for (int m = 0 ; m < listAfter.size(); m++) {
+          String changedLine = listAfter.get(m);
+          pw.println(changedLine);
         }
+        pw.close();
       }
     } catch (Exception e) {
       System.out.println(e.getMessage());
