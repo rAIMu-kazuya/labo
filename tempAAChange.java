@@ -80,12 +80,12 @@ public class tempAAChange{
         pw.close();
       }
     } catch (Exception e) {
-      System.out.println(e.getMessage());
+      e.printStackTrace();
     } finally {
       try {
         brCsv.close();
       } catch (Exception e) {
-        System.out.println(e.getMessage());
+        e.printStackTrace();
       }
     }
   }
