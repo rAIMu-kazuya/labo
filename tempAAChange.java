@@ -18,7 +18,7 @@ public class tempAAChange {
       keys = listCsv.get(0).split(",");
 
       /* 新規フォルダ "keys[0]" を作成 */
-      createNewFolder("./" + keys[0]);
+      createNewFolder("./" + keys[0] + "Question");
 
       /* PrintWriterのリストをつくって、各ファイルのwriterを格納する */
       List<PrintWriter> writers = new ArrayList<>();
