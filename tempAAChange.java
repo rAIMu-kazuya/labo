@@ -23,7 +23,7 @@ public class tempAAChange {
       /* PrintWriterのリストをつくって、各ファイルのwriterを格納する */
       List<PrintWriter> writers = new ArrayList<>();
       for (int i = 1; i < listCsv.size(); i++) {
-        String pathName = "./" + keys[0] + "/" + listCsv.get(i).split(",")[0] + ".java";
+        String pathName = "./" + keys[0] + "Question" + "/" + listCsv.get(i).split(",")[0] + ".java";
         createNewFile(pathName);
         FileWriter fw = new FileWriter(pathName);
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
