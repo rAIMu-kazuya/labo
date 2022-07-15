@@ -33,12 +33,12 @@ public class tempAAChange {
       /* 文字列が含まれているかどうか判別し、書き込む */
       for (String templateLine : listBefore) {
         boolean isContain = false;
-        int keyIndex = 0;
+        int[] keyIndex;
         for (int i = 0; i < keys.length; i++) {
           String key = keys[i];
           if (templateLine.contains(key)) {
             isContain = true;
-            keyIndex = i;
+            keyIndex = new int[i];
           }
         }
         if (isContain) {
@@ -122,12 +122,15 @@ public class tempAAChange {
    * @param keyIndex 変更keyのインデックス
    * @param listCsv  csvのリスト
    */
-  public static void write(List<PrintWriter> writers, String line, int keyIndex, List<String> listCsv) {
+  public static void write(List<PrintWriter> writers, String line, int[] keyIndex, List<String> listCsv) {
     for (int i = 1; i < listCsv.size(); i++) {
       PrintWriter writer = writers.get(i - 1);
-      writer.println(line.replace(
-        listCsv.get(0).split(",")[keyIndex],
-        listCsv.get(i).split(",")[keyIndex]));
+      for (int j = 0; j < keyIndex.length; i++){
+      line = line.replace(
+        listCsv.get(0).split(",")[keyIndex[j]],
+        listCsv.get(i).split(",")[keyIndex[j]]);
+      }
+      writer.println(line);
     }
   }
 }
