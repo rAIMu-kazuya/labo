@@ -33,16 +33,16 @@ public class tempAAChange {
       /* 文字列が含まれているかどうか判別し、書き込む */
       for (String templateLine : listBefore) {
         boolean isContain = false;
-        int keyIndex = 0;
+        List<Integer> keyIndexes = new ArrayList<>();
         for (int i = 0; i < keys.length; i++) {
           String key = keys[i];
           if (templateLine.contains(key)) {
             isContain = true;
-            keyIndex = i;
+            keyIndexes.add(i);
           }
         }
         if (isContain) {
-          write(writers, templateLine, keyIndex, listCsv);
+          write(writers, templateLine, keyIndexes, listCsv);
         } else {
           write(writers, templateLine);
         }
@@ -117,17 +117,23 @@ public class tempAAChange {
   /**
    * 指定の文字だけ書き換えて書き込みます。
    *
-   * @param writers  writerのリスト
-   * @param line     書き込む文字列
-   * @param keyIndex 変更keyのインデックス
-   * @param listCsv  csvのリスト
+   * @param writers    writerのリスト
+   * @param line       書き込む文字列
+   * @param keyIndexes 変更keyのインデックスのリスト
+   * @param listCsv    csvのリスト
    */
-  public static void write(List<PrintWriter> writers, String line, int keyIndex, List<String> listCsv) {
+//  public static void write(List<PrintWriter> writers, String line, int[] keyIndex, List<String> listCsv) {
+  public static void write(List<PrintWriter> writers, String line, List<Integer> keyIndexes, List<String> listCsv) {
     for (int i = 1; i < listCsv.size(); i++) {
       PrintWriter writer = writers.get(i - 1);
-      writer.println(line.replace(
-        listCsv.get(0).split(",")[keyIndex],
-        listCsv.get(i).split(",")[keyIndex]));
+      String lineForWriting = line;
+      for (int keyIndex : keyIndexes) {
+        lineForWriting = lineForWriting.replace(
+          listCsv.get(0).split(",")[keyIndex],
+          listCsv.get(i).split(",")[keyIndex]
+        );
+      }
+      writer.println(lineForWriting);
     }
   }
 }
