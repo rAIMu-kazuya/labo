@@ -1,17 +1,17 @@
 import java.util.*;
 import java.io.*;
 
-public class tempAAChange {
+public class tempBChange {
   public static void main(String[] args) {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
 
     try {
       /* csvファイル読込 */
-      readFile(listCsv, "./tempA.csv");
+      readFile(listCsv, "./tempB.csv");
 
       /* テンプレのjavaファイル読込 */
-      readFile(listBefore, "./tempAA.java");
+      readFile(listBefore, "./tempBA.java");
 
       /* csvファイルの１行目を配列key[]に分割しながら格納 */
       String[] keys;
