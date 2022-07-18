@@ -1,4 +1,4 @@
-//tempBB‚È‚³‚¢
+//tempBB
 
 public class tempBA {
   public static void main(String[] args) {
