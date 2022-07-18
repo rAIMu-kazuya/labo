@@ -1,4 +1,4 @@
-//ÀsŒ‹‰Ê‚ğ•\¦‚µ‚È‚³‚¢‚È‚³‚¢
+//ÀsŒ‹‰Ê‚ğ‘‚«‚È‚³‚¢
 
 public class result {
   public static void main(String[] args) {
