@@ -1,3 +1,4 @@
-tempBA,tempBB,tempBC
-result,実行結果を書きなさい,Hello World
-blank,実行結果がHello Worldとなるように??を埋めなさい,??
+tempBA,tempBB,tempBC,tempBD
+result,実行結果を書きなさい,Hello World,1
+blank,実行結果がHello Worldとなるように??を埋めなさい,??,1
+resultFor,実行結果を書きなさい,Hello World,3
