@@ -18,7 +18,7 @@
  */
 public class tempAA {
 	public static void main(String[] args) {
-		System.out.print("tempAA");
+		
 	}
 	public static int getRoom(String name) {
 		return 0;
