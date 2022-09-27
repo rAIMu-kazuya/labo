@@ -1,3 +1,4 @@
+package tempA;
 import java.util.*;
 import java.io.*;
 
@@ -5,7 +6,7 @@ public class tempAChange {
   public static void main(String[] args) {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
-
+    String fileName = args[];
     try {
       /* csvƒtƒ@ƒCƒ‹“Ç */
       readFile(listCsv, "./tempA.csv");

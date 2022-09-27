@@ -1,24 +1,25 @@
+package tempA;
 /**
- * House
- * ハウス
+ * tempAA
+ * tempAB
  * 
- * @question クラス図からソースプログラムの導出　（提出　House.java）
+ * @question クラス図からソースプログラムの導出　（提出　tempAA.java）
  * 
- * クラス図 House からソースプログラムを導出しなさい．
+ * クラス図 tempAA からソースプログラムを導出しなさい．
  * 
- * @make.inputClass House1
+ * @make.inputClass tempAA1
  * scale 1.2
  * align center
- * class House
+ * class tempAA
  *
  * @clearpage
  * 
  * @author kohama
  *
  */
-public class House {
+public class tempAA {
 	public static void main(String[] args) {
-		System.out.print("House");
+		
 	}
 	public static int getRoom(String name) {
 		return 0;

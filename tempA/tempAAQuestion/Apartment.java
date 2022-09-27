@@ -1,3 +1,4 @@
+package tempA.tempAAQuestion;
 /**
  * Apartment
  * アパートメント
