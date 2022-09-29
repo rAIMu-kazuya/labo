@@ -1,4 +1,3 @@
-package examA;
 import java.util.*;
 import java.io.*;
 
@@ -6,25 +5,32 @@ public class examAChange {
   public static void main(String[] args) {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
-    //String fileName = args[];
+    String fileName = args[0];
     try {
       /* csvファイル読込 */
       readFile(listCsv, "./examAA.csv");
 
       /* テンプレのjavaファイル読込 */
-      readFile(listBefore, "./examAAMain.java");
-/*
+      readFile(listBefore, fileName + ".java");
+
       /* csvファイルの１行目を配列key[]に分割しながら格納 */
       String[] keys;
       keys = listCsv.get(0).split(",");
 
-      /* 新規フォルダ "keys[0]" を作成 */
-      createNewFolder("./" + "Questionlist");
+      /* 配列key[]からコマンドラインで入力した名前と一致するものを検索し、その番号を"useColumn"に入れる */
+      int useColumn = Arrays.asList(keys).indexOf(fileName);
+
+      /* 新規フォルダ "Questionlist" を作成 */
+      createNewFolder("./Questionlist");
+
+      String nowPath =("./Questionlist/Question");
 
       /* PrintWriterのリストをつくって、各ファイルのwriterを格納する */
       List<PrintWriter> writers = new ArrayList<>();
       for (int i = 1; i < listCsv.size(); i++) {
-        String pathName = "./" + "Questionlist" + "/" + listCsv.get(i).split(",")[0] + ".java";
+        /* "Questionlist"の中に新規フォルダ "Questionlist(i)" を作成 */
+        createNewFolder(nowPath + i);
+        String pathName = nowPath + i + "/" + listCsv.get(i).split(",")[useColumn] + ".java";
         createNewFile(pathName);
         FileWriter fw = new FileWriter(pathName);
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
@@ -135,7 +141,6 @@ public class examAChange {
         );
       }
       writer.println(lineForWriting);
-*/
     }
   }
 }
