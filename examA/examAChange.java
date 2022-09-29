@@ -1,31 +1,30 @@
-package tempA;
+package examA;
 import java.util.*;
 import java.io.*;
 
-public class tempAChange {
+public class examAChange {
   public static void main(String[] args) {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
-    String fileName = args[];
+    //String fileName = args[];
     try {
       /* csvファイル読込 */
-      readFile(listCsv, "./tempA.csv");
+      readFile(listCsv, "./examAA.csv");
 
       /* テンプレのjavaファイル読込 */
-      readFile(listBefore, fileName);
-
+      readFile(listBefore, "./examAAMain.java");
+/*
       /* csvファイルの１行目を配列key[]に分割しながら格納 */
       String[] keys;
       keys = listCsv.get(0).split(",");
 
       /* 新規フォルダ "keys[0]" を作成 */
-      createNewFolder("./" + keys[0] + "Question");
+      createNewFolder("./" + "Questionlist");
 
       /* PrintWriterのリストをつくって、各ファイルのwriterを格納する */
       List<PrintWriter> writers = new ArrayList<>();
       for (int i = 1; i < listCsv.size(); i++) {
-        
-        String pathName = "./" + keys[0] + "Question" + "/" + listCsv.get(i).split(",")[0] + ".java";
+        String pathName = "./" + "Questionlist" + "/" + listCsv.get(i).split(",")[0] + ".java";
         createNewFile(pathName);
         FileWriter fw = new FileWriter(pathName);
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
@@ -136,6 +135,7 @@ public class tempAChange {
         );
       }
       writer.println(lineForWriting);
+*/
     }
   }
 }
