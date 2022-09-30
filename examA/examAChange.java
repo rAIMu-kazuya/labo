@@ -6,9 +6,10 @@ public class examAChange {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
     String fileName = args[0];
+    String csvName = args[1];
     try {
       /* csvファイル読込 */
-      readFile(listCsv, "examAA.csv");
+      readFile(listCsv, csvName + ".csv");
 
       /* テンプレのjavaファイル読込 */
       readFile(listBefore, fileName + ".java");
