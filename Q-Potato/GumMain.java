@@ -1,6 +1,6 @@
 /**
  * 
- * @question ポテトチップス　（提出物　PotatoChips.java, Gum.java）
+ * @question ポテトチップス （提出物 PotatoChips.java, Gum.java）
  * 
  * この問題は，お菓子(ポテトチップス, ガム)を扱うプログラムです． (1)～(4)の手順にしたがって，プログラムを作成しなさい．
  * 

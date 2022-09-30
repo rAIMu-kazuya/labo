@@ -8,7 +8,7 @@ public class examAChange {
     String fileName = args[0];
     try {
       /* csvファイル読込 */
-      readFile(listCsv, "./examAA.csv");
+      readFile(listCsv, "examAA.csv");
 
       /* テンプレのjavaファイル読込 */
       readFile(listBefore, fileName + ".java");
@@ -21,17 +21,20 @@ public class examAChange {
       int useColumn = Arrays.asList(keys).indexOf(fileName);
 
       /* 新規フォルダ "Questionlist" を作成 */
-      createNewFolder("./Questionlist");
+      createNewFolder("Questionlist");
 
-      String nowPath =("./Questionlist/Question");
+      String newPath =("Questionlist/Question");
 
       /* PrintWriterのリストをつくって、各ファイルのwriterを格納する */
       List<PrintWriter> writers = new ArrayList<>();
       for (int i = 1; i < listCsv.size(); i++) {
         /* "Questionlist"の中に新規フォルダ "Questionlist(i)" を作成 */
-        createNewFolder(nowPath + i);
-        String pathName = nowPath + i + "/" + listCsv.get(i).split(",")[useColumn] + ".java";
+        String nowPath = (newPath + i);
+        createNewFolder(nowPath);
+
+        String pathName = (nowPath + "/" + listCsv.get(i).split(",")[useColumn] + ".java");
         createNewFile(pathName);
+
         FileWriter fw = new FileWriter(pathName);
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
         writers.add(pw);
