@@ -5,8 +5,9 @@ public class examAChange {
   public static void main(String[] args) {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
-    String fileName = args[0];
-    String csvName = args[1];
+
+    String csvName = args[0];
+    String fileName = args[1];
     try {
       /* csvファイル読込 */
       readFile(listCsv, csvName + ".csv");
@@ -23,12 +24,12 @@ public class examAChange {
 
       /* 新規フォルダ "Questionlist" を作成 */
       createNewFolder("Questionlist");
-
       String newPath =("Questionlist/Question");
 
       /* PrintWriterのリストをつくって、各ファイルのwriterを格納する */
       List<PrintWriter> writers = new ArrayList<>();
       for (int i = 1; i < listCsv.size(); i++) {
+        
         /* "Questionlist"の中に新規フォルダ "Questionlist(i)" を作成 */
         String nowPath = (newPath + i);
         createNewFolder(nowPath);
