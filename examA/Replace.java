@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class examAChange {
+public class Replace {
   public static void main(String[] args) {
     List<String> listCsv = new ArrayList<>();
     List<String> listBefore = new ArrayList<>();
