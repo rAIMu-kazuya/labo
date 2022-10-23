@@ -7,7 +7,7 @@ public class Gum {
 	 * 
 	 * 価格(引数price)をインスタンス変数priceに代入します．
 	 * 
-	 * 
+	 * @param ??
 	 */
 	public Gum(int price) {
     this.price = price;

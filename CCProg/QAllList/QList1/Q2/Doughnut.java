@@ -1,15 +1,15 @@
-public class Gum {
+public class Doughnut {
 
-	private String item = "ガム";
+	private String item = "ドーナツ";
 	private int price;
 	/**
 	 * コンストラクタです．引数(price:int)は価格です．
 	 * 
 	 * 価格(引数price)をインスタンス変数priceに代入します．
 	 * 
-	 * 
+	 * @param ??
 	 */
-	public Gum(int price) {
+	public Doughnut(int price) {
     this.price = price;
 	}
 	/**

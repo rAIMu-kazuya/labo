@@ -1,8 +1,8 @@
 /**
  * 
- * @question TempCB （提出物 TempCA.java, TempAA.java）
+ * @question TempCB　（提出物　TempCA.java, TempAA.java）
  * 
- * この問題は，お菓子(TempCB, TempBA)を扱うプログラムです． (1)～(4)の手順にしたがって，プログラムを作成しなさい．
+ * この問題は，TempIB(TempCB, TempAB)を扱うプログラムです． (1)から(4)の手順にしたがって，プログラムを作成しなさい．
  * 
  * @subquestion クラス図 TempCA からソースプログラムを導出しなさい．
  * 
@@ -24,7 +24,7 @@
  * 
  * @execution TempBA
  * 
- * @source TempBA
+ * @source TempBA.java
  * 
  * @subquestion API仕様　TempAA　を満足するように　TempAA.java　を実装しなさい．
  * 
@@ -35,16 +35,16 @@
  */
 public class TempBA {
 	public static void main(String[] args) {
-		TempAA TempAA1 = new TempAA(100);
-		TempAA TempAA2 = new TempAA(150);
+		TempAA TempAA1 = new TempAA(IntBB);
+		TempAA TempAA2 = new TempAA(IntDB);
 		
 		String item1 = TempAA1.getItem();
 		String item2 = TempAA2.getItem();
-		int price1 = TempAA1.getPrice();
-		int price2 = TempAA2.getPrice();
-		int sum = price1 + price2;
-		System.out.println(item1 + " " + price1 + "円");
-		System.out.println(item2 + " " + price2 + "円");
-		System.out.println("合計" + sum + "円");
+		int TempFB1 = TempAA1.TempGB();
+		int TempFB2 = TempAA2.TempGB();
+		int sum = TempFB1 + TempFB2;
+		System.out.println(item1 + " " + TempFB1 + "TempHB");
+		System.out.println(item2 + " " + TempFB2 + "TempHB");
+		System.out.println("合計" + sum + "TempHB");
 	}
 }

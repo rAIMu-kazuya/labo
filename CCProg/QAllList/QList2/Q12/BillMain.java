@@ -1,0 +1,53 @@
+/**
+ * 
+ * @question 　（提出物　Bill_1000.java）
+ * 
+ * この問題は，千円紙幣(Bill_1000)を扱うプログラムです． (1)から(3)の手順にしたがって，プログラムを作成しなさい．
+ * 
+ * @subquestion クラス図 Bill_1000 からソースプログラムを導出しなさい．
+ * 
+ * @make.inputClass Value
+ * scale 1.2
+ * align center
+ * class Value
+ * 
+ * ！！！！ここに矢印
+ * 
+ * @make.inputClass Bill_1000
+ * scale 1.2
+ * align center
+ * class Bill_1000
+ * 
+ * @image 1000.png
+ * 
+ * 　　　　※画像は http://gahag.net/000546-money-japanese-yen/ から引用
+ * 
+ * @clearpage
+ *
+ * @subquestion 動作確認用プログラム BillMain.java を作成しなさい．
+ * 
+ * @execution BillMain
+ * 
+ * @source BillMain.java
+ * 
+ * @subquestion API仕様　Bill_1000　を満足するように　Bill_1000.java　を実装しなさい．
+ * 
+ * @api Bill_1000
+ * 
+ * @author miura
+ * 
+ */
+public class BillMain {
+	public static void main(String[] args) {
+		CoinBox coinBox = new CoinBox();
+		coinBox.add( new Coin50() );
+		coinBox.add( new Coin50() );
+		coinBox.add( new Coin50() );
+		coinBox.add( new Bill_1000() );
+
+		coinBox.print();
+		int sum = coinBox.getSum();
+		System.out.println("----");
+		System.out.println("合計" + sum + "円");
+	}
+}
