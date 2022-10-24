@@ -8,7 +8,7 @@ public class ReplaceMain {
         /* テンプレートファイルのリストを作成 */
         //TempFileList tempFileList = new TempFileList();
         TempFileList tempFileList = new TempFileList("./TempList/" + args[0]);
-
+        
         /*tempFileList.add("./Temp/TempAA.java");
         tempFileList.add("./Temp/TempBA.java");
         tempFileList.add("./Temp/TempCA.java");*/
@@ -40,7 +40,7 @@ public class ReplaceMain {
                     /* フォルダの中にjavaファイルを作成 */
                     String newFile = newFolder + "/" + listCsv.get(i + 1).split(",")[j + 1] + ".java";
                     createNewFile(newFile);
-                    String content = Files.readString(path, Charset.forName("SJIS"));
+                    String content = Files.readString(path, Charset.forName("MS932"));
                     /* csvファイルの2行目以降を配列valuesに格納 */
                     String[] values;
                     values = listCsv.get(i + 1).split(",");
