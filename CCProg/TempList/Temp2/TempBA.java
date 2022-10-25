@@ -2,25 +2,15 @@
  * 
  * @question 　（提出物　TempAA.java）
  * 
- * この問題は，TempAB(TempAA)を扱うプログラムです． (1)から(3)の手順にしたがって，プログラムを作成しなさい．
+ * この問題は，TempAB(TempAA)を扱うプログラムです． (1)～(3)の手順にしたがって，プログラムを作成しなさい．
  * 
  * @subquestion クラス図 TempAA からソースプログラムを導出しなさい．
  * 
- * @make.inputClass Value
- * scale 1.2
+ * @make.inputClass CoinrollMain1
  * align center
- * class Value
- * 
- * ！！！！ここに矢印
- * 
- * @make.inputClass TempAA
- * scale 1.2
- * align center
- * class TempAA
- * 
- * @image TempFB
- * 
- * 　　　　※画像は http://gahag.net/000546-money-japanese-yen/ から引用
+ * class Value   0  0
+ * class TempAA    0 -5
+ * arrow TempAAImplementsValue
  * 
  * @clearpage
  *

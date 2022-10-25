@@ -2,21 +2,15 @@
  * 
  * @question 　（提出物　Coinroll_100.java）
  * 
- * この問題は，コイン(Coin100)を50枚入れた棒金(Coinroll_100)を扱うプログラムです． (1)から(3)の手順にしたがって，プログラムの作成，実行結果の予想をしなさい．
+ * この問題は，コイン(Coin100)を50枚入れた棒金(Coinroll_100)を扱うプログラムです． (1)～(3)の手順にしたがって，プログラムの作成，実行結果の予想をしなさい．
  * 
  * @subquestion クラス図 Coinroll_100 からソースコードを導出しなさい．
  * 
- * @make.inputClass Value
- * scale 1.2
+ * @make.inputClass CoinrollMain1
  * align center
- * class Value
- * 
- * ！！！！ここに矢印
- * 
- * @make.inputClass Coinroll_100
- * scale 1.2
- * align center
- * class Coinroll_100
+ * class Value   0  0
+ * class Coinroll_100    0 -5
+ * arrow Coinroll_100ImplementsValue    
  * 
  * ※ArrayListを使用するために　import java.util.ArrayList;　が必要です．
  * 

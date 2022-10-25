@@ -2,7 +2,7 @@
  * 
  * @question TempCB　（提出物　TempCA.java, TempAA.java）
  * 
- * この問題は，TempIB(TempCB, TempAB)を扱うプログラムです． (1)から(4)の手順にしたがって，プログラムを作成しなさい．
+ * この問題は，TempIB(TempCB, TempAB)を扱うプログラムです． (1)～(4)の手順にしたがって，プログラムを作成しなさい．
  * 
  * @subquestion クラス図 TempCA からソースプログラムを導出しなさい．
  * 

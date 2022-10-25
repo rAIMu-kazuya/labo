@@ -2,21 +2,15 @@
  * 
  * @question 　（提出物　TempAA.java）
  * 
- * この問題は，コイン(TempAB)を50枚入れた棒金(TempAA)を扱うプログラムです． (1)から(3)の手順にしたがって，プログラムの作成，実行結果の予想をしなさい．
+ * この問題は，コイン(TempAB)を50枚入れた棒金(TempAA)を扱うプログラムです． (1)～(3)の手順にしたがって，プログラムの作成，実行結果の予想をしなさい．
  * 
  * @subquestion クラス図 TempAA からソースコードを導出しなさい．
  * 
- * @make.inputClass Value
- * scale 1.2
+ * @make.inputClass CoinrollMain1
  * align center
- * class Value
- * 
- * ！！！！ここに矢印
- * 
- * @make.inputClass TempAA
- * scale 1.2
- * align center
- * class TempAA
+ * class Value   0  0
+ * class TempAA    0 -5
+ * arrow TempAAImplementsValue    
  * 
  * ※ArrayListを使用するために　import java.util.ArrayList;　が必要です．
  * 
