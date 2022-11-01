@@ -8,7 +8,7 @@ public class TempFileList {
         File file = new File(name);
         File[] list = file.listFiles();
         for(int i = 0; i < list.length; i++) {
-            if(list[i].getName().contains("Temp")) {
+            if(list[i].getName().contains(".java")) {
                 this.tempFileList.add(name + "/" + list[i].getName());
             } else {
                 this.name = name;
