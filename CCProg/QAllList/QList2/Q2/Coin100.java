@@ -1,7 +1,7 @@
-public class Bill_10000 implements Value {
-  public Bill_10000(){
+public class Coin100 implements Value{
+  public Coin100(){
   }
   public int getValue(){
-    return 10000;
+    return 100;
   }
 }

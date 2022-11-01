@@ -1,4 +1,4 @@
-public class TempAA implements Value {
+public class TempAA implements TempDA {
   public TempAA(){
   }
   public int getValue(){

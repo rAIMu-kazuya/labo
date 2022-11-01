@@ -1,13 +1,13 @@
 import java.util.ArrayList;
-public class CoinBox{
-	private ArrayList<Value> arrayList = new ArrayList<Value>();
-	public CoinBox(){}
-	public void add(Value value){
+public class TempCA{
+	private ArrayList<TempDA> arrayList = new ArrayList<TempDA>();
+	public TempCA(){}
+	public void add(TempDA value){
 		this.arrayList.add(value);
 	}
-	public Value remove(int number){
+	public TempDA remove(int number){
 		for(int i = 0; i < this.arrayList.size(); i++){
-			Value value = this.arrayList.get(i);
+			TempDA value = this.arrayList.get(i);
 			if(number == value.getValue()){
 				return value;
 			}
@@ -20,14 +20,14 @@ public class CoinBox{
 	public int getSum(){
 		int sum = 0;
 		for(int i = 0; i < this.arrayList.size(); i++){
-			Value value = this.arrayList.get(i);
+			TempDA value = this.arrayList.get(i);
 			sum += value.getValue();
 		}
 		return sum;
 	}
 	public void print(){
 		for(int i = 0; i < this.arrayList.size(); i++){
-			Value value = this.arrayList.get(i);
+			TempDA value = this.arrayList.get(i);
 			System.out.println(value.getValue());
 		}
 	}

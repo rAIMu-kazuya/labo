@@ -27,9 +27,9 @@
  * @author miura
  * 
  */
-public class CoinrollMain {
+public class TempBA {
 	public static void main(String[] args) {
-		CoinBox coinBox = new CoinBox();
+		TempCA coinBox = new TempCA();
 		coinBox.add( new CoinIntBB() );
 		coinBox.add( new CoinIntCB() );
 		coinBox.add( new CoinIntDB() );

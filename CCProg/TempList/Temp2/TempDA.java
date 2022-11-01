@@ -1,3 +1,3 @@
-public interface Value {
+public interface TempDA {
   public int getValue();
 }

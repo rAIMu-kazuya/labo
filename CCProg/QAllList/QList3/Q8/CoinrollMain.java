@@ -29,10 +29,10 @@
  */
 public class CoinrollMain {
 	public static void main(String[] args) {
-		CoinBox coinBox = new CoinBox();
-		coinBox.add( new Coin50() );
-		coinBox.add( new Coin50() );
-		coinBox.add( new Coin50() );
+		TempCA coinBox = new TempCA();
+		coinBox.add( new TempFA() );
+		coinBox.add( new TempFA() );
+		coinBox.add( new TempFA() );
 		coinBox.add( new Coinroll_50() );
 
 		int sum = coinBox.getSum();
