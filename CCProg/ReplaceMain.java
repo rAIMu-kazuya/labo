@@ -6,22 +6,25 @@ import java.nio.charset.Charset;
 public class ReplaceMain {
     public static void main(String[] args) {
         /* テンプレートファイルのリストを作成 */
-        //TempFileList tempFileList = new TempFileList();
-        TempFileList tempFileList = new TempFileList("./TempList/" + args[0]);
-        
-        /*tempFileList.add("./Temp/TempAA.java");
-        tempFileList.add("./Temp/TempBA.java");
-        tempFileList.add("./Temp/TempCA.java");*/
+        String temp = "./TempList/" + args[0];
+        TempFileList tempFileList = new TempFileList(temp);
+
+        /* イメージファイルのリストを作成 */
+        ImageFileList imageFileList = new ImageFileList(temp);
         
         /* csvの中身を入れるリストを作成 */
         List<String> listCsv = new ArrayList<>();
+
         for(int i = 0; i < tempFileList.getSize(); i++) {
             System.out.println(tempFileList.get(i));
+        }
+        for(int i = 0; i < imageFileList.getSize(); i++) {
+            System.out.println(imageFileList.get(i));
         }
 
         try {
             /* csvファイルの読み込み */
-            readFile(listCsv, "./TempList/" + args[0] + "/Change.csv");
+            readFile(listCsv, temp + "/Change.csv");
             /* csvファイルの1行目を配列keysに格納 */
             String[] keys;
             keys = listCsv.get(0).split(",");
@@ -34,9 +37,17 @@ public class ReplaceMain {
                 String newFolder = mainFolder + "/" + listCsv.get(i + 1).split(",")[0];
                 createNewFolder(newFolder);
 
+                /* 画像ファイルがある場合は画像ファイルの追加 */
+                if(imageFileList != null) {
+                    for(int j = 0; j < imageFileList.getSize(); j++) {
+                        FileInputStream input = new FileInputStream(temp + "/" + imageFileList.get(j));
+                        FileOutputStream output = new FileOutputStream(newFolder + "/" + imageFileList.get(j));
+                        copyFile(input, output);
+                    }
+                }
+
                 for(int j = 0; j < tempFileList.getSize(); j++) {
                     Path path = Paths.get(tempFileList.get(j));
-                    System.out.println(tempFileList.get(j));
                     /* フォルダの中にjavaファイルを作成 */
                     String newFile = newFolder + "/" + listCsv.get(i + 1).split(",")[j + 1] + ".java";
                     createNewFile(newFile);
@@ -89,5 +100,22 @@ public class ReplaceMain {
           list.add(line);
         }
         bufferedReader.close();
+    }
+    /* ファイルのコピー */
+    public static void copyFile(FileInputStream input, FileOutputStream output) {
+        try{
+            byte buf[] = new byte[256];
+            int len;
+            while ((len = input.read(buf)) != -1) {
+                output.write(buf, 0, len);
+            }
+            output.flush();
+            output.close();
+            input.close();
+            System.out.println("コピーが完了しました。");
+        } catch (IOException e) {
+            System.out.println("コピーに失敗しました。");
+            e.printStackTrace();
+        }
     }
 }
