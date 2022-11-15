@@ -12,6 +12,10 @@
  * class TempAA    0 -5
  * arrow TempAAImplementsValue
  * 
+ * @image TempEB.png
+ * 
+ * 　　　　※画像は http://gahag.net/000546-money-japanese-yen/ から引用
+ * 
  * @clearpage
  *
  * @subquestion 動作確認用プログラム BillMain.java を作成しなさい．

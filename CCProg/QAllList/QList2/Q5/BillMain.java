@@ -1,16 +1,20 @@
 /**
  * 
- * @question 　（提出物　Bill_5000.java）
+ * @question 　（提出物　Bill.java）
  * 
- * この問題は，5千円紙幣(Bill_5000)を扱うプログラムです． (1)～(3)の手順にしたがって，プログラムを作成しなさい．
+ * この問題は，5千円紙幣(Bill)を扱うプログラムです． (1)～(3)の手順にしたがって，プログラムを作成しなさい．
  * 
- * @subquestion クラス図 Bill_5000 からソースプログラムを導出しなさい．
+ * @subquestion クラス図 Bill からソースプログラムを導出しなさい．
  * 
  * @make.inputClass CoinrollMain1
  * align center
  * class Value   0  0
- * class Bill_5000    0 -5
- * arrow Bill_5000ImplementsValue
+ * class Bill    0 -5
+ * arrow BillImplementsValue
+ * 
+ * @image 5000.png
+ * 
+ * 　　　　※画像は http://gahag.net/000546-money-japanese-yen/ から引用
  * 
  * @clearpage
  *
@@ -20,9 +24,9 @@
  * 
  * @source BillMain.java
  * 
- * @subquestion API仕様　Bill_5000　を満足するように　Bill_5000.java　を実装しなさい．
+ * @subquestion API仕様　Bill　を満足するように　Bill.java　を実装しなさい．
  * 
- * @api Bill_5000
+ * @api Bill
  * 
  * @author miura
  * 
@@ -30,10 +34,10 @@
 public class BillMain {
 	public static void main(String[] args) {
 		CoinBox coinBox = new CoinBox();
-		coinBox.add( new Coin100() );
-		coinBox.add( new Coin100() );
-		coinBox.add( new Coin100() );
-		coinBox.add( new Bill_5000() );
+		coinBox.add( new CoinAAA() );
+		coinBox.add( new CoinAAA() );
+		coinBox.add( new CoinAAA() );
+		coinBox.add( new Bill() );
 
 		coinBox.print();
 		int sum = coinBox.getSum();

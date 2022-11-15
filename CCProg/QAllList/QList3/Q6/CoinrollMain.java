@@ -15,10 +15,8 @@
  * ※ArrayListを使用するために　import java.util.ArrayList;　が必要です．
  * 
  * @clearpage
- *
- * @subquestion API仕様　Coinroll_50　を満足するように　Coinroll_50.java　を実装しなさい．
  * 
- * @api Coinroll_50
+ * @source Coinroll_50.java
  * 
  * @subquestion 以下のソースコード CoinrollMain.java の実行結果を予想しなさい．
  * 

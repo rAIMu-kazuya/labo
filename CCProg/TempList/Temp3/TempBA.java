@@ -15,10 +15,8 @@
  * ※ArrayListを使用するために　import java.util.ArrayList;　が必要です．
  * 
  * @clearpage
- *
- * @subquestion API仕様　TempAA　を満足するように　TempAA.java　を実装しなさい．
  * 
- * @api TempAA
+ * @source TempAA.java
  * 
  * @subquestion 以下のソースコード CoinrollMain.java の実行結果を予想しなさい．
  * 

@@ -15,10 +15,8 @@
  * ※ArrayListを使用するために　import java.util.ArrayList;　が必要です．
  * 
  * @clearpage
- *
- * @subquestion API仕様　Coinroll_50　を満足するように　Coinroll_50.java　を実装しなさい．
  * 
- * @api Coinroll_50
+ * @source Coinroll_50.java
  * 
  * @subquestion 以下のソースコード CoinrollMain.java の実行結果を予想しなさい．
  * 
@@ -29,10 +27,10 @@
  */
 public class CoinrollMain {
 	public static void main(String[] args) {
-		TempCA coinBox = new TempCA();
-		coinBox.add( new TempFA() );
-		coinBox.add( new TempFA() );
-		coinBox.add( new TempFA() );
+		CoinBox coinBox = new CoinBox();
+		coinBox.add( new Coin50() );
+		coinBox.add( new Coin50() );
+		coinBox.add( new Coin50() );
 		coinBox.add( new Coinroll_50() );
 
 		int sum = coinBox.getSum();
