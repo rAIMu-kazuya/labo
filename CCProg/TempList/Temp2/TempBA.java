@@ -10,11 +10,12 @@
  * align center
  * class Value   0  0
  * class TempAA    0 -5
- * arrow TempAAImplementsValue
+ * arrow TempAAImplementsValue 0 -3
  * 
- * @image TempEB.png
+ * @img [scale = 0.2] TempEB.png
  * 
- * 　　　　※画像は http://gahag.net/000546-money-japanese-yen/ から引用
+ * 
+ * \\ \ ※画像は http://gahag.net/000546-money-japanese-yen/ から引用
  * 
  * @clearpage
  *
@@ -23,6 +24,9 @@
  * @execution BillMain
  * 
  * @source BillMain.java
+ * @source TempEA.java
+ * @source TempFA.java
+ * 
  * 
  * @subquestion API仕様　TempAA　を満足するように　TempAA.java　を実装しなさい．
  * 
