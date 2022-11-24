@@ -1,9 +1,9 @@
 import java.util.ArrayList;
-public class Coinroll_50 implements Value{
-	private ArrayList<Coin50> arrayList = new ArrayList<Coin50>();
-	public Coinroll_50(){
+public class Coinroll implements Value{
+	private ArrayList<CoinBB> arrayList = new ArrayList<CoinBB>();
+	public Coinroll(){
 		for(int i = 0; i < 50; i++){
-			this.arrayList.add(new Coin50());
+			this.arrayList.add(new CoinBB());
 		}
 	}
 	public int getValue(){

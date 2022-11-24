@@ -10,7 +10,7 @@
  * align center
  * class Value   0  0
  * class TempAA    0 -5
- * arrow TempAAImplementsValue    
+ * arrow TempAAImplementsValue  0 -3 
  * 
  * ※ArrayListを使用するために　import java.util.ArrayList;　が必要です．
  * 
@@ -21,6 +21,8 @@
  * @subquestion 以下のソースコード CoinrollMain.java の実行結果を予想しなさい．
  * 
  * @source CoinrollMain.java
+ * @source TempEA.java
+ * @source TempFA.java
  * 
  * @author miura
  * 
