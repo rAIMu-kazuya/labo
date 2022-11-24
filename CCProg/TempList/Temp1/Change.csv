@@ -1,0 +1,6 @@
+QList1,TempAA,TempBA,TempCA,????,TempAB,IntBB,IntDB,TempCB,TempEB,TempFB,TempGB,TempHB,TempIB
+Q1,Gum,GumMain,PotatoChips,///,ガム,100,150,ポテトチップス,価格,price,getPrice,円,お菓子
+Q2,Doughnut,DoughnutMain,Crepe,///,ドーナツ,150,400,クレープ,価格,price,getPrice,円,お菓子
+Q3,Jelly,JellyMain,Cookie,///,ゼリー,20,70,クッキー,価格,price,getPrice,円,お菓子
+Q4,Candy,CandyMain,Mashmallow,///,キャンディ,50,100,マシュマロ,価格,price,getPrice,円,お菓子
+Q5,Ball,BallMain,Racket,///,ボール,1,2,ラケット,重さ,weight,getWeight,kg,商品

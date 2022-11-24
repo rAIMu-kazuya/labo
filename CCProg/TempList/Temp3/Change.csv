@@ -1,0 +1,9 @@
+QList3,TempAA,TempBA,TempCA,TempDA,TempEA,TempFA,????,TempAB,IntBB,IntCB,IntDB
+Q1,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinAAA,AAA,AAA,AAA
+Q2,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinAAA,AAA,AAA,BB
+Q3,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinAAA,AAA,BB,BB
+Q4,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinAAA,BB,BB,BB
+Q5,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinBB,AAA,AAA,AAA
+Q6,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinBB,AAA,AAA,BB
+Q7,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinBB,AAA,BB,BB
+Q8,Coinroll,CoinrollMain,CoinBox,Value,CoinAAA,CoinBB,///,CoinBB,BB,BB,BB
